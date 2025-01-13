@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Agent Dashboard - Agents</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar (same as index.html) -->
+        <div class="sidebar bg-light border-end p-3">
+            <h3 class="mb-4">AI Agent Dashboard</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-grid"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="agents.html">
+                        <i class="bi bi-robot"></i> Agents
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-diagram-3"></i> Skills Tree
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-gear"></i> Settings
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content p-4 w-100">
+            <!-- Search and Filter Bar -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="d-flex gap-3 w-50">
+                    <input type="search" class="form-control" placeholder="Search agents...">
+                    <select class="form-select w-auto">
+                        <option>All Types</option>
+                        <option>Combat</option>
+                        <option>Analysis</option>
+                        <option>Support</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newAgentModal">
+                    <i class="bi bi-plus-lg"></i> New Agent
+                </button>
+            </div>
+
+            <!-- Agents Grid -->
+            <div class="row g-4">
+                <!-- Agent #0 - Adam -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title mb-1">Agent #0 - Adam</h5>
+                                    <span class="badge bg-danger">Combat Type</span>
+                                </div>
+                                <div class="agent-status online"></div>
+                            </div>
+                            <p class="text-muted">First Combat AI based on EVA-01 neural patterns</p>
+                            
+                            <!-- Skills -->
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Active Skills</h6>
+                                <div class="skill-badges">
+                                    <span class="badge bg-primary m-1">AT Field Analysis</span>
+                                    <span class="badge bg-danger m-1">Berserker Mode</span>
+                                    <span class="badge bg-warning text-dark m-1">Pattern Recognition</span>
+                                </div>
+                            </div>
+
+                            <!-- Stats -->
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Sync Rate</small>
+                                        <strong>98.5%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Uptime</small>
+                                        <strong>720h</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-success">Deploy</button>
+                                <button class="btn btn-sm btn-outline-danger">Terminate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent #1 - Lilith -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title mb-1">Agent #1 - Lilith</h5>
+                                    <span class="badge bg-info">Analysis Type</span>
+                                </div>
+                                <div class="agent-status online"></div>
+                            </div>
+                            <p class="text-muted">Advanced analysis AI based on EVA-00 neural patterns</p>
+                            
+                            <!-- Skills -->
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Active Skills</h6>
+                                <div class="skill-badges">
+                                    <span class="badge bg-info m-1">Data Mining</span>
+                                    <span class="badge bg-primary m-1">Pattern Analysis</span>
+                                    <span class="badge bg-success m-1">Neural Link</span>
+                                </div>
+                            </div>
+
+                            <!-- Stats -->
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Sync Rate</small>
+                                        <strong>92.1%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Uptime</small>
+                                        <strong>648h</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-success">Deploy</button>
+                                <button class="btn btn-sm btn-outline-danger">Terminate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent #2 - Lance -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title mb-1">Agent #2 - Lance</h5>
+                                    <span class="badge bg-success">Support Type</span>
+                                </div>
+                                <div class="agent-status maintenance"></div>
+                            </div>
+                            <p class="text-muted">Support AI based on EVA-02 neural patterns</p>
+                            
+                            <!-- Skills -->
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Active Skills</h6>
+                                <div class="skill-badges">
+                                    <span class="badge bg-success m-1">Resource Management</span>
+                                    <span class="badge bg-warning text-dark m-1">System Control</span>
+                                    <span class="badge bg-info m-1">Network Defense</span>
+                                </div>
+                            </div>
+
+                            <!-- Stats -->
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Sync Rate</small>
+                                        <strong>87.3%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Uptime</small>
+                                        <strong>456h</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-success">Deploy</button>
+                                <button class="btn btn-sm btn-outline-danger">Terminate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent #3 - Mari -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title mb-1">Agent #3 - Mari</h5>
+                                    <span class="badge bg-info">Analysis Type</span>
+                                </div>
+                                <div class="agent-status online"></div>
+                            </div>
+                            <p class="text-muted">Advanced AI based on EVA-05 neural patterns</p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Active Skills</h6>
+                                <div class="skill-badges">
+                                    <span class="badge bg-info m-1">Market Analysis</span>
+                                    <span class="badge bg-primary m-1">Trend Prediction</span>
+                                    <span class="badge bg-success m-1">Risk Assessment</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Sync Rate</small>
+                                        <strong>94.7%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Uptime</small>
+                                        <strong>552h</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-success">Deploy</button>
+                                <button class="btn btn-sm btn-outline-danger">Terminate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent #4 - Kaworu -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title mb-1">Agent #4 - Kaworu</h5>
+                                    <span class="badge bg-danger">Combat Type</span>
+                                </div>
+                                <div class="agent-status offline"></div>
+                            </div>
+                            <p class="text-muted">Specialized combat AI based on EVA-06 patterns</p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Active Skills</h6>
+                                <div class="skill-badges">
+                                    <span class="badge bg-danger m-1">High-Speed Trading</span>
+                                    <span class="badge bg-warning text-dark m-1">Market Making</span>
+                                    <span class="badge bg-info m-1">Arbitrage</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Sync Rate</small>
+                                        <strong>89.9%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Uptime</small>
+                                        <strong>0h</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-success">Deploy</button>
+                                <button class="btn btn-sm btn-outline-danger">Terminate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent #5 - Rei -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title mb-1">Agent #5 - Rei</h5>
+                                    <span class="badge bg-success">Support Type</span>
+                                </div>
+                                <div class="agent-status online"></div>
+                            </div>
+                            <p class="text-muted">Support AI specialized in system optimization</p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-2">Active Skills</h6>
+                                <div class="skill-badges">
+                                    <span class="badge bg-success m-1">System Optimization</span>
+                                    <span class="badge bg-primary m-1">Error Recovery</span>
+                                    <span class="badge bg-info m-1">Performance Monitoring</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Sync Rate</small>
+                                        <strong>95.2%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 border rounded">
+                                        <small class="text-muted d-block">Uptime</small>
+                                        <strong>672h</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-success">Deploy</button>
+                                <button class="btn btn-sm btn-outline-danger">Terminate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Agent Modal -->
+    <div class="modal fade" id="newAgentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Agent</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Agent Name</label>
+                            <input type="text" class="form-control" placeholder="Enter agent name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Type</label>
+                            <select class="form-select">
+                                <option>Combat</option>
+                                <option>Analysis</option>
+                                <option>Support</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Base Neural Pattern</label>
+                            <select class="form-select">
+                                <option>EVA-01</option>
+                                <option>EVA-00</option>
+                                <option>EVA-02</option>
+                                <option>EVA-05</option>
+                                <option>EVA-06</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Initial Skills</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label">Pattern Recognition</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label">Data Mining</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label">System Control</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Create Agent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
